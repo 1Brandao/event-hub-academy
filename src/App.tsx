@@ -28,27 +28,56 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   }
   
   if (!user) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/login" replace />;
   }
   
   return <>{children}</>;
 };
 
 const AppRoutes = () => {
+  const { user } = useAuth();
+
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<ProtectedRoute><Index /></ProtectedRoute>} />
-          <Route path="/users" element={<ProtectedRoute><Users /></ProtectedRoute>} />
-          <Route path="/events" element={<ProtectedRoute><Events /></ProtectedRoute>} />
-          <Route path="/approvals" element={<ProtectedRoute><Approvals /></ProtectedRoute>} />
-          <Route path="/certificates" element={<ProtectedRoute><Certificates /></ProtectedRoute>} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <UserFeedback />
-      </Layout>
+      <Routes>
+        <Route path="/login" element={
+          user ? <Navigate to="/" replace /> : 
+          <Layout>
+            <Login />
+          </Layout>
+        } />
+        <Route path="/" element={
+          <Layout>
+            <ProtectedRoute><Index /></ProtectedRoute>
+          </Layout>
+        } />
+        <Route path="/users" element={
+          <Layout>
+            <ProtectedRoute><Users /></ProtectedRoute>
+          </Layout>
+        } />
+        <Route path="/events" element={
+          <Layout>
+            <ProtectedRoute><Events /></ProtectedRoute>
+          </Layout>
+        } />
+        <Route path="/approvals" element={
+          <Layout>
+            <ProtectedRoute><Approvals /></ProtectedRoute>
+          </Layout>
+        } />
+        <Route path="/certificates" element={
+          <Layout>
+            <ProtectedRoute><Certificates /></ProtectedRoute>
+          </Layout>
+        } />
+        <Route path="*" element={
+          <Layout>
+            <NotFound />
+          </Layout>
+        } />
+      </Routes>
+      <UserFeedback />
     </BrowserRouter>
   );
 };
