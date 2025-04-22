@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -43,11 +42,11 @@ const Index = () => {
     <div className="space-y-10 py-6">
       <section className="text-center space-y-4 animate-fade-in">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          <span className="text-college-blue dark:text-white">Faculdade </span>
-          <span className="text-college-red">Connect</span>
+          <span className="text-college-blue dark:text-white">CEPEX </span>
+          <span className="text-college-red">SYSTEM</span>
         </h1>
         <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-          Plataforma integrada para gestão acadêmica e eventos institucionais
+          Plataforma integrada para gerenciamento de eventos e processos acadêmicos
         </p>
       </section>
 
@@ -78,7 +77,7 @@ const Index = () => {
           <h2 className="text-2xl font-bold">Gestão acadêmica simplificada</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Nossa plataforma fornece ferramentas intuitivas para todos os perfis da instituição, 
-            facilitando a criação, aprovação e participação em eventos acadêmicos.
+            facilitando a criação, aprovação e participação em processos acadêmicos.
           </p>
         </div>
       </section>

@@ -56,10 +56,10 @@ export const Header = () => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-md bg-college-red flex items-center justify-center">
-            <span className="text-white font-bold text-sm">FC</span>
+            <span className="text-white font-bold text-sm">CS</span>
           </div>
           <span className="font-semibold text-xl tracking-tight text-college-blue dark:text-white">
-            Faculdade Connect
+            CEPEX SYSTEM
           </span>
         </div>
 

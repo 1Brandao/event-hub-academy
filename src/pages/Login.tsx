@@ -59,9 +59,9 @@ const Login = () => {
     <div className="flex min-h-[80vh] flex-col items-center justify-center py-12">
       <div className="w-full max-w-md space-y-8 p-8 bg-card rounded-lg border shadow-md">
         <div className="text-center">
-          <h1 className="text-2xl font-bold">Acesso ao Sistema</h1>
+          <h1 className="text-2xl font-bold">CEPEX SYSTEM</h1>
           <p className="text-muted-foreground mt-2">
-            Faça login para acessar a plataforma
+            Acesso ao sistema de gestão acadêmica
           </p>
         </div>
         
