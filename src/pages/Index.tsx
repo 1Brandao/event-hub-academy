@@ -9,12 +9,12 @@ const Index = () => {
       description: "Gerencie alunos, professores, coordenadores e secretarias",
       path: "/users",
       color: "bg-college-blue/10",
-      textColor: "text-college-blue",
+      textColor: "text-college-white",
       delay: "animate-delay-100",
     },
     {
-      title: "Eventos",
-      description: "Crie e gerencie diversos tipos de eventos acadêmicos",
+      title: "Atividades",
+      description: "Crie e gerencie diversos tipos de Atividades acadêmicos",
       path: "/events",
       color: "bg-college-red/10",
       textColor: "text-college-red",
@@ -22,7 +22,7 @@ const Index = () => {
     },
     {
       title: "Aprovações",
-      description: "Fluxo de revisão e aprovação de eventos",
+      description: "Fluxo de revisão e aprovação de Atividades",
       path: "/approvals",
       color: "bg-college-blue/10",
       textColor: "text-college-blue",
@@ -46,7 +46,8 @@ const Index = () => {
           <span className="text-college-red">SYSTEM</span>
         </h1>
         <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-          Plataforma integrada para gerenciamento de eventos e processos acadêmicos
+          Plataforma integrada para gerenciamento de Atividades e processos
+          acadêmicos
         </p>
       </section>
 
@@ -72,12 +73,16 @@ const Index = () => {
         ))}
       </section>
 
-      <section className="rounded-lg glass p-8 mt-12 animate-fade-in" style={{ animationDelay: '500ms' }}>
+      <section
+        className="rounded-lg glass p-8 mt-12 animate-fade-in"
+        style={{ animationDelay: "500ms" }}
+      >
         <div className="text-center space-y-4">
           <h2 className="text-2xl font-bold">Gestão acadêmica simplificada</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Nossa plataforma fornece ferramentas intuitivas para todos os perfis da instituição, 
-            facilitando a criação, aprovação e participação em processos acadêmicos.
+            Nossa plataforma fornece ferramentas intuitivas para todos os perfis
+            da instituição, facilitando a criação, aprovação e participação em
+            processos acadêmicos.
           </p>
         </div>
       </section>

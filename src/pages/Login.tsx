@@ -1,10 +1,16 @@
-
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { toast } from "sonner";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,7 +27,7 @@ type LoginFormValues = z.infer<typeof loginSchema>;
 const Login = () => {
   const { login, isLoading, error } = useAuth();
   const navigate = useNavigate();
-  
+
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -29,7 +35,7 @@ const Login = () => {
       password: "",
     },
   });
-  
+
   const onSubmit = async (values: LoginFormValues) => {
     try {
       await login(values.email, values.password);
@@ -39,14 +45,14 @@ const Login = () => {
       // Error is handled in the context
     }
   };
-  
+
   // Show error toast if there's an error
   React.useEffect(() => {
     if (error) {
       toast.error(error);
     }
   }, [error]);
-  
+
   // Demo account info
   const demoAccounts = [
     { type: "Aluno", email: "aluno@faculdade.com" },
@@ -64,7 +70,7 @@ const Login = () => {
             Acesso ao sistema de gestão acadêmica
           </p>
         </div>
-        
+
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
@@ -80,7 +86,7 @@ const Login = () => {
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="password"
@@ -94,24 +100,18 @@ const Login = () => {
                 </FormItem>
               )}
             />
-            
+
             <Button type="submit" className="w-full" disabled={isLoading}>
               {isLoading ? "Entrando..." : "Entrar"}
             </Button>
           </form>
         </Form>
-        
+
         <div className="mt-8 border-t pt-6">
-          <h3 className="text-sm font-medium text-center mb-3">Contas para demonstração:</h3>
-          <div className="grid grid-cols-2 gap-2 text-xs">
-            {demoAccounts.map((account) => (
-              <div key={account.email} className="bg-muted p-2 rounded">
-                <strong>{account.type}:</strong> {account.email}
-                <br />
-                <strong>Senha:</strong> qualquer texto
-              </div>
-            ))}
-          </div>
+          <h3 className="text-sm font-medium text-center mb-3 underline">
+            <a href="">Esqueceu sua senha?</a>
+          </h3>
+          <div className="grid grid-cols-2 gap-2 text-xs"></div>
         </div>
       </div>
     </div>
